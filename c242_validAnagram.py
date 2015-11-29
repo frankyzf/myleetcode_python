@@ -1,4 +1,5 @@
 __name__ = 'feng'
+
 from collections import Counter
 
 class Solution(object):
@@ -8,11 +9,11 @@ class Solution(object):
         :type t: str
         :rtype: bool
         """
-
         print Counter(s).items()
         return Counter(s).items() == Counter(t).items()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
+    print "main"
     s = Solution()
     print s.isAnagram("abc", "bac")
