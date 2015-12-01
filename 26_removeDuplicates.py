@@ -14,8 +14,8 @@ class Solution(object):
         if j == len(nums):
             return j
         i = j
-        for j in xrange(i+1, len(nums)):
-            if nums[i] != nums[j]:
+        for j in xrange(i, len(nums)):
+            if nums[i-1] != nums[j]:
                 nums[i] = nums[j]
                 i += 1
             j += 1
@@ -24,3 +24,6 @@ class Solution(object):
 
 if __name__ == '__main__':
     s = Solution()
+    l = [-1,0,0,0,0,3,3]
+    a = s.removeDuplicates(l)
+    print l[:a]
