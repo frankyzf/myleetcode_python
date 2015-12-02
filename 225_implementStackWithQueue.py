@@ -46,3 +46,6 @@ class Stack(object):
 
 if __name__ == '__main__':
     s = Stack()
+    s.push(1)
+    s.push(2)
+    print s.top()
