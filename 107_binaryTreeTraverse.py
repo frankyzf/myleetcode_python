@@ -18,7 +18,7 @@ class Solution(object):
         a = [root]
         r=[]
         while len(a):
-            r.append(a)
+            r.append(list(map(lambda x: x.val, a)))
             b = []
             for i in xrange(0, len(a)):
                 if a[i].left:
