@@ -13,23 +13,21 @@ def constructTree(str):
     root = TreeNode(int(l[0]))
     p = [root]
     i = 1
-    while i < len(l) and len(p):
-        pp = []
+    while len(p)  and i < len(l):
+        q = []
         for j in xrange(0, len(p)):
-            if l[i] == '#':
-                p[j].left = None
-            else:
-                p[j].left = TreeNode(int(l[i]))
-                pp.append(p[j].left)
-            i+= 1
-
-            if l[i] == '#':
-                p[j].right = None
-            else:
-                p[j].right = TreeNode(int(l[i]))
-                pp.append(p[j].right)
+            if i < len(l) and l[i] != '#':
+                p[j].left = TreeNode((int)(l[i]))
+                q.append(p[j].left)
             i += 1
-        p = pp
+            if i < len(l) and l[i] != '#':
+                p[j].right = TreeNode(int(l[i]))
+                q.append(p[j].right)
+            i += 1
+        p = q
+    return root
+
+
     return root
 
 
