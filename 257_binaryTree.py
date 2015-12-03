@@ -25,7 +25,7 @@ class Solution(object):
         if not( root.left or root.right):
             res.append(ll)
         if root.left:
-            self.btp(root.left, ll[:] res)
+            self.btp(root.left, ll[:], res)
         if root.right:
             self.btp(root.right, ll, res)
 
