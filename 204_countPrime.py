@@ -7,21 +7,19 @@ class Solution(object):
         :type n: int
         :rtype: int
         """
-        import math
-        if n == 1:
-            return 1
-        ss = []
-        ee = (int)(math.sqrt(n+1)) + 1
-        for a in xrange(2, ee):
-            badd = True
-            for b in ss:
-                if a%b == 0:
-                    badd = False
-                    break
-            if badd:
-                ss.append(a)
-
-        return len(ss)
+        if n <= 1:
+            return 0
+        prime = [True] * max(n, 2)
+        prime[0], prime[1] = False, False
+        base = 2
+        while base*base < n:
+            if prime[base]:
+                i = 2
+                while i * base < n:
+                    prime[i*base] = False
+                    i += 1
+            base += 1
+        return sum(prime)
 
 
 if __name__ == '__main__':
