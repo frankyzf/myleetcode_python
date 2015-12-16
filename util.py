@@ -35,7 +35,6 @@ class ListNode(object):
         self.val = x
         self.next = None
 
-
 def constructList(l):
     root = ListNode(l[0])
     p = root
@@ -43,3 +42,10 @@ def constructList(l):
         p.next = ListNode(l[i])
         p = p.next
     return root
+
+class TreeLinkNode(object):
+    def __init__(self, x):
+        self.val = x
+        self.left = None
+        self.right = None
+        self.next = None
